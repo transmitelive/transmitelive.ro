@@ -16,6 +16,11 @@ p {
   100% { width: 100%; }
 }
 
+.backup-background {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://upload.wikimedia.org/wikipedia/commons/d/dd/Muybridge_race_horse_animated.gif) no-repeat center center fixed;
+  background-size: cover;
+}
+
 .roll {
   font-size: 1.5rem;
   font-style: italic;
@@ -145,7 +150,11 @@ p {
 
 @media screen and (max-width: 480px) {
   .description {
-    margin: 40px 10px;
+    margin: 20px 10px;
+  }
+
+  .phone > a {
+    margin: 20px;
   }
 
   .description,

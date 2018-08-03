@@ -4,6 +4,7 @@ import { FadeIn, BounceLeft, FadeInDown, Delay, Disappear } from "animate-compon
 import { FaMobileAlt, FaFacebookSquare, FaYoutubeSquare, FaEnvelopeSquare } from 'react-icons/fa';
 import Roll from './Roll';
 import logo from './logo.png';
+import { isMobile } from "react-device-detect";
 import 'normalize.css/normalize.css';
 import './App.css';
 
@@ -17,13 +18,15 @@ class App extends Component {
     };
 
     return (
-      <div>
+      <div className={isMobile && "backup-background"}>
         <div className="background-video" >
           <div className="background-overlayer" />
-            <VideoCover
-              videoOptions={videoOptions}
-              remeasureOnWindowResize
-            />
+            {!isMobile &&
+              <VideoCover
+                videoOptions={videoOptions}
+                remeasureOnWindowResize
+              />
+            }
         </div>
         <div className="main">
           <div className="logo-container">
@@ -36,7 +39,7 @@ class App extends Component {
             <FadeIn duration="4s" as="div">
               <div className="description">
                 <span className="social social-animation">Evenimentele</span> tale pe toate platformele de&nbsp;
-                <span className="social social-animation-delayed">social media</span>.
+                <span className="social social-animation-delayed">social media</span>
               </div>
             </FadeIn>
             <FadeIn
