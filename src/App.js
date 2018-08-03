@@ -11,7 +11,7 @@ import './App.css';
 class App extends Component {
   render() {
     const videoOptions = {
-      src: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+      src: '924800509.mp4',
       autoPlay: true,
       muted: true,
       loop: true,
