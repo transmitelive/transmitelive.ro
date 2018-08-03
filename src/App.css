@@ -1,0 +1,161 @@
+body {
+  color: #f5f5f5;
+}
+
+p {
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes increaseWidth {
+  0%   { width: 0; }
+  100% { width: 100%; }
+}
+
+.roll {
+  font-size: 1.5rem;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roll .content {
+  display: inline-block;
+  flex: 1;
+}
+
+.roll .content-right {
+  text-align: left;
+  margin-left: 5px;
+}
+
+.roll .content-left {
+  text-align: right;
+  margin-right: 5px;
+}
+
+.roll .element {
+  animation: fadeIn 2s;
+  font-weight: bold;
+}
+
+
+.background-video {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.background-overlayer {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(82, 79, 79, 0.7);
+  filter: blur(2px);
+}
+
+.main {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.logo {
+  width: 25%;
+  min-width: 250px;
+}
+
+.logo-container {
+  align-content: center;
+  text-align: center;
+}
+
+.description {
+  font-size: 2.5rem;
+  padding: 1.5rem;
+  margin: 40px;
+}
+
+.social {
+  white-space: nowrap;
+  position: relative;
+  display: inline-block;
+}
+
+.social:after {
+  content: "";
+  border-bottom: 2px solid;
+  width: 0%;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.social-animation:after {
+  animation-name: increaseWidth;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-delay: .8s;
+}
+
+.social-animation-delayed:after {
+  animation-name: increaseWidth;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-delay: 2.8s;
+}
+
+.social-media {
+  margin-top: auto;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.social-media a {
+  margin: 15px;
+}
+
+.phone > a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 40px;
+  margin-top: 60px;
+  display: inline-block;
+  color: #fff;
+  /* font-style: italic; */
+}
+
+@media screen and (max-width: 480px) {
+  .description {
+    margin: 40px 10px;
+  }
+
+  .description,
+  .phone a {
+    font-size: 1.5rem;
+  }
+
+  .roll {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    flex-direction: column;
+  }
+}
