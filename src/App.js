@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import VideoCover from 'react-video-cover';
-import { FadeIn, BounceLeft, FadeInDown, Delay, Disappear } from "animate-components";
+import { FadeIn, FadeInDown, } from "animate-components";
 import { FaMobileAlt, FaFacebookSquare, FaYoutubeSquare, FaEnvelopeSquare } from 'react-icons/fa';
 import Roll from './Roll';
 import logo from './logo.png';
@@ -18,7 +18,7 @@ class App extends Component {
     };
 
     return (
-      <div className={isMobile && "backup-background"}>
+      <div className={isMobile ? "backup-background" : ""}>
         <div className="background-video" >
           <div className="background-overlayer" />
             {!isMobile &&
@@ -34,7 +34,7 @@ class App extends Component {
               duration="2s"
               as="div"
             >
-              <img src={logo} className="logo" />
+              <img src={logo} className="logo" alt="Transmitelive.ro" />
             </FadeInDown>
             <FadeIn duration="4s" as="div">
               <div className="description">
@@ -80,10 +80,10 @@ class App extends Component {
             </FadeIn>
             <div className="social-media">
               <FadeInDown duration="2s" as="div">
-                <a href="https://www.facebook.com/transmite.live.3" target="_blank"><FaFacebookSquare size="2.5rem" color="#f5f5f5" /></a>
+                <a href="https://www.facebook.com/transmite.live.3" target="_blank" rel="noopener noreferrer"><FaFacebookSquare size="2.5rem" color="#f5f5f5" /></a>
               </FadeInDown>
               <FadeInDown duration="3s" as="div">
-                <a href="https://www.youtube.com/channel/UC3oXdZebbp7_IOsj40DgFtw?disable_polymer=true" target="_blank"><FaYoutubeSquare size="2.5rem" color="#f5f5f5" /></a>
+                <a href="https://www.youtube.com/channel/UC3oXdZebbp7_IOsj40DgFtw?disable_polymer=true" target="_blank" rel="noopener noreferrer"><FaYoutubeSquare size="2.5rem" color="#f5f5f5" /></a>
               </FadeInDown>
               <FadeInDown duration="4s" as="div">
                 <a href="mailto:transmitelive@gmail.com?Subject=Hello"><FaEnvelopeSquare size="2.5rem" color="#f5f5f5" /></a>
